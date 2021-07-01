@@ -1,0 +1,9 @@
+Primary Key
+
+Types:
+1. Surrogate key: It has no mapping in the real world. It is just a unique value given to row
+to uniquely identify it.
+
+2.Natural key: It has a mapping in the real world along with the database. Eg. SSN(Social Security Number),
+Aadhar Number.
+

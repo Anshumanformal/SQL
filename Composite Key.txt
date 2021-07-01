@@ -1,0 +1,1 @@
+Composite Key: It is a key which consists of two attributes.

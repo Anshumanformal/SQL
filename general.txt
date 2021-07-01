@@ -1,0 +1,5 @@
+LIMIT - it can be used to provide limit to the number of documents, we want to output.
+
+While using DESCRIBE, integer always expects some value. That is it is not null.
+But, string doesn't expect any value by default. This means it can be null by default.
+

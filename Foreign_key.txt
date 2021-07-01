@@ -1,0 +1,12 @@
+Foreign Key: It is an attribute that we can store on a database table that links to another database table.
+It stores the primary key of a row of another database table.
+
+Eg: 
+
+                                        _________>the column name is getting referenced 
+                                       |
+                                       |
+FOREIGN KEY (band_id) REFERENCES bands(id);
+                |                   |___________> other table name 
+                |                       
+        this is the local key which is a foreign key

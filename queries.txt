@@ -1,0 +1,91 @@
+1. Student Database queries.
+------------------------------------------------------------------------
+CREATE DATABASE student;
+
+USE student;
+
+CREATE TABLE student(
+    student_id INT,
+    name VARCHAR(20),
+    major VARCHAR(20),
+    PRIMARY KEY (student_id)
+);
+
+//Describing the table.
+DESCRIBE student;
+
+//Dropping the table(similar to dropping a collection in MongoDB).
+DROP TABLE student;
+
+//Adding a column to the table.
+ALTER TABLE student ADD gpa DECIMAL(3,2);
+
+//Dropping a column from the table.
+ALTER TABLE student DROP COLUMN gpa;
+
+//Inserting values into the table.
+INSERT INTO student VALUES(1,'Ramu Kumar', 'Biology');
+INSERT INTO student VALUES(2,'Krishna Kumar', 'Mathematics');
+INSERT INTO student VALUES(3,'Basant gaurav', 'English');
+INSERT INTO student VALUES(4,'Hello Singh', 'Physics');
+INSERT INTO student VALUES(5,'Sonny Middleton', 'Chemistry');
+INSERT INTO student VALUES(6,'Tony Stark', 'Geography');
+
+//To view all data.
+SELECT * FROM student;
+
+//Inserting values into specific columns.
+INSERT INTO student(student_id, name) VALUES(3,'Mohan Das');
+
+//Creating tables with constraints like NOT NULL and UNIQUE.
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20),
+    minor VARCHAR(20) DEFAULT 'undecided',
+    PRIMARY KEY (student_id)
+);
+
+INSERT INTO student(name,major) VALUES('Ramu Kumar', 'Biology');
+INSERT INTO student(name,major) VALUES('Krishna Kumar', 'Mathematics');
+INSERT INTO student(name,major) VALUES('Basant gaurav', 'English');
+INSERT INTO student(name,major) VALUES('Hello Singh', 'Physics');
+INSERT INTO student(name,major) VALUES('Sonny Middleton', 'Chemistry');
+INSERT INTO student(name,major) VALUES('Tony Stark', 'Geography');
+INSERT INTO student(name,major) VALUES('Kim Kumar', 'Chemistry');
+
+
+//Updating a column in a table.
+
+UPDATE student
+SET major = 'Bio'
+WHERE student_id = 1;
+
+//Using OR operator.
+
+    UPDATE student
+    SET major = 'BioChemistry'
+    WHERE major = 'Biology' OR major = 'Chemistry';
+
+//Setting multiple values in SET.
+
+UPDATE student
+SET name = 'TOM', major = 'BioChemistry'
+WHERE major = 'Biology' OR major = 'Chemistry';
+
+
+//Delete all of the rows inside the table.
+DELETE FROM student
+WHERE student_id = 6;
+
+
+//Querying data from Database.
+
+SELECT name,major
+FROM student;
+
+//Also we can use table name with dot operator to have a more concise understanding.
+SELECT student.name,student.major
+FROM student;
+
+------------------------------------------------------------------------
