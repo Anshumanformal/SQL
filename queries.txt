@@ -17,7 +17,7 @@ Full Outer Join - Selecting all rows from both the tables irrespective of they m
 Nested Queries - These comprise of multiple SELECT statements to find specific piece of information.
 When to use nested queries: These are used when data of one query is passed to another query. This is like filtering data.
 JOIN/RIGHT JOIN/LEFT JOIN vs nested queries: These can't replace nested queries as they project NULL, when there is no data, rather than filtering them.
-On Delete - 
+On Delete - CASCADE and NOT NULL.
 
 
 1. Student Database queries.
